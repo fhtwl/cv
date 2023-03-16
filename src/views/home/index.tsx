@@ -1,5 +1,7 @@
 import SystemHead from '@/components/SystemHead';
 import { defineComponent } from 'vue';
+import GlobalFooter from '@/components/GlobalFooter';
+import './index.less';
 
 export default defineComponent({
   render() {
@@ -11,6 +13,7 @@ export default defineComponent({
             <router-view />
           </div>
         </div>
+        <GlobalFooter />
       </div>
     );
   },
