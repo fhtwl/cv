@@ -1,0 +1,30 @@
+@import url(../../../holographicArchives/Tabs/index.less);
+.tabs.initial {
+  display: flex;
+  background: linear-gradient(90deg, #4a6381, #284669);
+  height: 60px;
+  margin-top: 20px;
+  .tab-header {
+    width: 100%;
+    position: relative;
+    .tab-pane {
+      margin-right: 20px;
+    }
+    .right {
+      position: absolute;
+      right: 0;
+      display: flex;
+      align-items: center;
+      .attitude-item {
+        display: flex;
+        align-items: center;
+        margin: 0 20px 0 20px;
+        .color {
+          width: 16px;
+          height: 16px;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
