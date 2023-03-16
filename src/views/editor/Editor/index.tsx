@@ -6,11 +6,13 @@ import {
   getCurrentInstance,
 } from 'vue';
 import './index.less';
-import { basicSetup, EditorView } from 'codemirror';
-
+import { basicSetup } from 'codemirror';
+import { indentWithTab, defaultKeymap } from '@codemirror/commands';
 import { EditorState } from '@codemirror/state';
+import { EditorView, keymap } from '@codemirror/view';
 
 import { markdown } from '@codemirror/lang-markdown';
+import { javascript } from '@codemirror/lang-javascript';
 
 export default defineComponent({
   props: {
@@ -38,7 +40,15 @@ export default defineComponent({
 
       const startState = EditorState.create({
         doc: props.html,
-        extensions: [basicSetup, markdown(), updateListenerExtension],
+        extensions: [
+          basicSetup,
+          keymap.of([indentWithTab]),
+          markdown({
+            defaultCodeLanguage: markdown(),
+          }),
+          // javascript(),
+          updateListenerExtension,
+        ],
         // lineWrapping: true,
       });
 

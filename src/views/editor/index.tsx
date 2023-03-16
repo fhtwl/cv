@@ -6,7 +6,14 @@ import './index.less';
 
 export default defineComponent({
   setup() {
-    const html = ref('');
+    const html = ref(
+      `
+      * 1
+      * 2
+      **3**
+      > 4
+      `
+    );
     const handleChange = (str: string) => {
       html.value = str;
     };
